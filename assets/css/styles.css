@@ -11,7 +11,8 @@ input::-webkit-inner-spin-button {
 
 body{
     font-family: 'Space Grotesk', sans-serif;
-    background: url(/assets/images/bg-main-desktop.png) no-repeat;
+    background:  no-repeat;
+    background-image: url(../images/bg-main-desktop.png);
     background-size: 30%;
 }
 
