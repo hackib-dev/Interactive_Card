@@ -1,0 +1,169 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    background: url(/assets/images/bg-main-desktop.png) no-repeat;
+    background-size: 30%;
+}
+
+.mobile{
+    display: none;
+}
+
+.left_content{
+    height: 100%;
+}
+
+.card_front{
+    position: absolute;
+    top: 120px;
+    left: 140px;
+}
+
+.card_back{
+    position: absolute;
+   top: 315px;
+   left: 190px;
+}
+
+.text{
+    position: absolute;
+    color: white;
+    top: 140px;
+    left: 160px;
+}
+
+ .details{
+        position: absolute;
+        color: white;
+        top: 250px;
+        left: 160px;
+    }
+
+.a{
+    min-width: 100%;
+}
+
+
+.card_num{
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
+.card_name{
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.card_month{
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.card_year{
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.back_text{
+    position: absolute;
+    top: 390px;
+    left:420px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.right{
+    padding: 134px 200px 134px 700px;
+}
+
+.form-label{
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.btn{
+    background-color:hsl(278, 68%, 11%);
+}
+
+::placeholder{
+    color: hsl(270, 3%, 87%);
+    font-weight:normal;
+    font-size: 13px;
+}
+
+@media screen and (max-width:992px) {
+
+    .left_bg{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+        width:100vw;
+     
+    }
+    .card_front{
+        position: absolute;
+        top: 123px;
+        left: 20px;
+        z-index: 1;
+    }
+
+    .card_back{
+        position: absolute;
+        top: 30px;
+        left: 60px;
+    }
+
+    .text{
+        position: absolute;
+        color: white;
+        top: 150px;
+        left: 30px;
+        z-index: 1;
+    }
+
+    .details{
+        position: absolute;
+        color: white;
+        top: 250px;
+        left: 30px;
+        z-index: 1;
+    }
+
+
+    .back_text{
+        position: absolute;
+        top: 105px;
+        left:290px;
+        z-index: 2;
+      
+    }
+    .right{
+        padding: 90px 30px 50px 30px;
+    }
+    .form-label{
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    ::placeholder{
+        font-size: 16px;
+    }
+
+    .btn{
+        padding: 50px auto;
+    }
+    
+    
+}
