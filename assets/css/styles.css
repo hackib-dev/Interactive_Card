@@ -86,6 +86,19 @@ body{
     padding: 134px 200px 134px 700px;
 }
 
+.thank_you{
+    padding: 180px 200px 180px 700px;
+    display: none;
+}
+
+.thank{
+    letter-spacing: 3px;
+}
+
+.added{
+    font-size: 12px;
+}
+
 .form-label{
     font-size: 8px;
     font-weight: bold;
@@ -96,6 +109,14 @@ body{
 .btn{
     background-color:hsl(278, 68%, 11%);
 }
+
+.cont_btn{
+    background-color:hsl(278, 68%, 11%);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 80px;
+}
+
 
 ::placeholder{
     color: hsl(270, 3%, 87%);
@@ -164,6 +185,11 @@ body{
 
     .btn{
         padding: 50px auto;
+    }
+    
+    .thank_you{
+        padding: 90px 50px;
+        display: none;
     }
     
     

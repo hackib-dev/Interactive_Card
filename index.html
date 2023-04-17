@@ -61,32 +61,40 @@
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">CARDHOLDER NAME</label>
               <input type="text" class="form-control cardName" id="cardName" aria-describedby="text" oninput="cardName()" placeholder="e.g. Aqib Akinyele" value="" maxlength="25">
-              <small id="name_error"></small>
+              <small id="name_error" class="name_error"></small>
             </div>
             <div class="mb-1">
                 <label for="exampleInputEmail1" class="form-label">CARD NUMBER</label>
                 <input type="text" class="form-control cardNumber" id="cardNumber" oninput="cardNumber()" aria-describedby="number" placeholder="e.g. 1234 5678 9123 0000" value="" maxlength="20">
-                <small id="num_error"></small>
+                <small id="num_error" class="num_error"></small>
             </div>
             <div class="col-md-3 col-3">
                 <label for="month" class="form-label">EXP.DATE</label>
                 <input type="text" class="form-control month" id="month" oninput="cardMonth()" placeholder="MM" value="" maxlength="2">
-                <small id="mon_error"></small>
+                <small id="mon_error" class="mon_error"></small>
             </div>
             <div class="col-md-3 col-3">
                 <label for="inputState" class="form-label">(MM/YY)</label>
                 <input type="text" class="form-control year" id="year" oninput="cardYear()" placeholder="YY" value="" maxlength="2">
-                <small id="year_error"></small>
+                <small id="year_error" class="year_error"></small>
             </div>
             <div class="col-md-6 col-6">
                 <label for="inputZip" class="form-label">CVC</label>
                 <input type="text" class="form-control cvc" id="cvc" oninput="cardCvc()" placeholder="e.g. 123" value="" maxlength="3">
-                <small id="cvc_error"></small>
+                <small id="cvc_error" class="cvc_error"></small>
             </div>       
             <button type="button" class="mt-4 btn py-3 py-md-2 text-white" onclick="card()" value="submit">Confirm</button>
         </form>
 
     </div>
+
+    <div class="mx-auto thank_you text-center">
+        <img src="./assets/images/icon-complete.svg" width="50px" alt="">
+        <p class="fw-bold thank mt-3">THANK YOU!</p>
+        <p class="fw-bold added" >We've added you card details</p> 
+        <button type="button" class="cont_btn text-white" value="submit">Continue</button>
+    </div>
+
 </div>
 
 
@@ -127,8 +135,87 @@
     
     }
 
-   
+    function card(){
+    var name = document.querySelector('.cardName').value;
+    var number = document.querySelector('.cardNumber').value;
+    var month = document.querySelector('.month').value;
+    var year = document.querySelector('.year').value;
+    var cvc = document.getElementById('cvc').value;
+
+    if (name == ''){
+        nameError = document.querySelector('.name_error');
+        nameError.style.color = "red";
+        nameError.style.fontSize = "xx-small";
+        nameError.style.float = "left";
+        nameError.innerHTML = 'Card Name cannot be empty';
+    }
+    else if(name != '') {
+        document.querySelector('.name_error').innerHTML = '';
+    }
+
+    if(number !== '' && number.match(/^[0-9]+$/) !== null) {
+        document.querySelector('.num_error').innerHTML = '';
+    }
+
+    else{
+        numError = document.querySelector('.num_error');
+        numError.style.color = "red";
+        numError.style.fontSize = "xx-small";
+        numError.style.float = "left";
+        numError.innerHTML = 'Wrong format, numbers only';
+    }
+
+    if (month == ''){
+        monthError = document.querySelector('.mon_error');
+        monthError.style.color = "red";
+        monthError.style.fontSize = "xx-small";
+        monthError.style.float = "left";
+        monthError.innerHTML = "Can't be blank";
+    }
+
+    else if(month != '') {
+        document.querySelector('.mon_error').innerHTML = '';
+    }
+
+    if (year == ''){
+        yearError = document.querySelector('.year_error');
+        yearError.style.color = "red";
+        yearError.style.fontSize = "xx-small";
+        yearError.style.float = "left";
+        yearError.innerHTML = "Can't be blank";
+    }
+
+    else if(year != '') {
+        document.querySelector('.year_error').innerHTML = '';
+    }
+    
+    
+    if (cvc == ''){
+        cvcError = document.getElementById('cvc_error');
+        cvcError.style.color = "red";
+        cvcError.style.fontSize = "xx-small";
+        cvcError.style.float = "left";
+        cvcError.innerHTML = "Can't be blank";
+    }
+    
+    else if(cvc != '') {
+        document.querySelector('.cvc_error').innerHTML = '';
+    }
+
+    if(name && number && month && year && cvc != ''){
+        var right =  document.querySelector('.right');
+        var thank_you = document.querySelector('.thank_you');
+        thank_you.style.display = 'block';
+        right.style.display = 'none';
+     }
+ 
+
+
+
+ 
+}
 
 </script>
 
 </html>
+
