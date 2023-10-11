@@ -15,11 +15,12 @@ document.querySelector(".cardNumber").oninput = () => {
     card += cardNumber[i];
   }
 
-  if (card.length === 19) {
-    cardInput.addEventListener("keypress", (e) => {
-      e.preventDefault();
-    });
-  }
+  //   if (card.length === 19) {
+  //     cardInput.addEventListener("keypress", (e) => {
+  //       e.preventDefault();
+  //     });
+  //     cardInput.addEventListener("");
+  //   }
 
   document.querySelector(".card_num").innerHTML = card;
 };
